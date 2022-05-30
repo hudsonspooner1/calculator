@@ -1,34 +1,89 @@
-let nOne = 2;
-let nTwo = 5;
-answer = 0;
+
 
 function add() {
-    answer = nOne + nTwo;
-    return answer;
+    let operator = "+";
+    return operator;
 }
 
 function subtract() {
-    answer = nOne - nTwo;
-    return answer;
+    let operator = "-";
+    return operator;
 }
 
 function divide() {
-    answer = nOne / nTwo;
-    return answer;
+    let operator = "/";
+    return operator;
 }
 
 function multiply() {
-    answer = nOne * nTwo;
-    return answer;
+    let operator = "*";
+    return operator;
+}
+
+function one() {
+    let nOne = "1";
+    return nOne;
+}
+
+function two() {
+    let Two = "2";
+    return nTwo;
 }
 
 
 function display() {
-    document.getElementById("bOne").onclick = 
-}
+
+    let nOne = " ";
+    let operator = " ";
+    let nTwo = " ";
+    let answer = " ";
+
+    const bOne = document.getElementById("bOne");
+    const bTwo = document.getElementById("bTwo");
+    const bThree = document.getElementById("bThree");
+    const bFour = document.getElementById("bFour");
+    const bFive = document.getElementById("bFive");
+    const bSix = document.getElementById("bSix");
+    const bSeven = document.getElementById("bSeven");
+    const bEight = document.getElementById("bEight");
+    const bNine = document.getElementById("bNine");
+
+    const bAdd = document.getElementById("bAdd");
+    const bSubtract = document.getElementById("bSubtract");
+    const bDivide = document.getElementById("bDivide");
+    const bMultiply = document.getElementById("bMultiply");
+
+    const display = document.getElementById("display");
+
+    bOne.addEventListener('click', () => {
+        one();
+    });
+
+    bTwo.addEventListener("click", () => {
+        two();
+    });
+
+    bAdd.addEventListener("click", () => {
+        add();
+    });
+
+    bEquals.addEventListener("click", () => {
+        console.log(displayValue);
+    });
+
+
+
+
+    let displayValue = nOne.concat(" ", operator, " ", nTwo);
+
+    return displayValue;
+};
+
+
+
 
 function operate() {
-
+    console.log(display());
 }
 
 operate();
