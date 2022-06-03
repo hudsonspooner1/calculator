@@ -1,89 +1,175 @@
+let num1 = "";
+let num2 = "";
+let operator = "";
+let answer = "";
+
+const bOne = document.getElementById("bOne");
+const bTwo = document.getElementById("bTwo");
+const bThree = document.getElementById("bThree");
+const bFour = document.getElementById("bFour");
+const bFive = document.getElementById("bFive");
+const bSix = document.getElementById("bSix");
+const bSeven = document.getElementById("bSeven");
+const bEight = document.getElementById("bEight");
+const bNine = document.getElementById("bNine");
+const bZero = document.getElementById("bZero");
 
 
-function add() {
-    let operator = "+";
-    return operator;
-}
+const bAdd = document.getElementById("bAdd");
+const bSubtract = document.getElementById("bSubtract");
+const bDivide = document.getElementById("bDivide");
+const bMultiply = document.getElementById("bMultiply");
 
-function subtract() {
-    let operator = "-";
-    return operator;
-}
+const bEquals = document.getElementById("bEquals");
 
-function divide() {
-    let operator = "/";
-    return operator;
-}
 
-function multiply() {
-    let operator = "*";
-    return operator;
-}
 
-function one() {
-    let nOne = "1";
-    return nOne;
-}
-
-function two() {
-    let Two = "2";
-    return nTwo;
-}
 
 
 function display() {
 
-    let nOne = " ";
-    let operator = " ";
-    let nTwo = " ";
-    let answer = " ";
+    let displayValue = "Display: ";
 
-    const bOne = document.getElementById("bOne");
-    const bTwo = document.getElementById("bTwo");
-    const bThree = document.getElementById("bThree");
-    const bFour = document.getElementById("bFour");
-    const bFive = document.getElementById("bFive");
-    const bSix = document.getElementById("bSix");
-    const bSeven = document.getElementById("bSeven");
-    const bEight = document.getElementById("bEight");
-    const bNine = document.getElementById("bNine");
-
-    const bAdd = document.getElementById("bAdd");
-    const bSubtract = document.getElementById("bSubtract");
-    const bDivide = document.getElementById("bDivide");
-    const bMultiply = document.getElementById("bMultiply");
 
     const display = document.getElementById("display");
+    display.textContent = displayValue;
+
+
 
     bOne.addEventListener('click', () => {
-        one();
+        displayValue = displayValue + "1";
+        display.textContent = displayValue;
     });
 
     bTwo.addEventListener("click", () => {
-        two();
+        displayValue = displayValue + "2";
+        display.textContent = displayValue;
     });
 
+    bThree.addEventListener("click", () => {
+        displayValue = displayValue + "3";
+        display.textContent = displayValue;
+    });
+
+    bFour.addEventListener("click", () => {
+        displayValue = displayValue + "4";
+        display.textContent = displayValue;
+    });
+
+    bFive.addEventListener("click", () => {
+        displayValue = displayValue + "5";
+        display.textContent = displayValue;
+    });
+
+    bSix.addEventListener("click", () => {
+        displayValue = displayValue + "6";
+        display.textContent = displayValue;
+    });
+
+    bSeven.addEventListener("click", () => {
+        displayValue = displayValue + "7";
+        display.textContent = displayValue;
+    });
+
+    bEight.addEventListener("click", () => {
+        displayValue = displayValue + "8";
+        display.textContent = displayValue;
+    });
+
+    bNine.addEventListener("click", () => {
+        displayValue = displayValue + "9";
+        display.textContent = displayValue;
+    });
+
+    bZero.addEventListener("click", () => {
+        displayValue = displayValue + "0";
+        display.textContent = displayValue;
+    });
+
+
+
+
     bAdd.addEventListener("click", () => {
-        add();
+        parseInt(num1 = displayValue.split("Display: ")[1], 10);
+        displayValue = displayValue + "+";
+        operator = "+";
+        display.textContent = displayValue;
+    });
+
+    bSubtract.addEventListener("click", () => {
+        parseInt(num1 = displayValue.split("Display: ")[1], 10);
+        displayValue = displayValue + "-";
+        operator = "-";
+        display.textContent = displayValue;
+    });
+
+    bDivide.addEventListener("click", () => {
+        parseInt(num1 = displayValue.split("Display: ")[1], 10);
+        displayValue = displayValue + "/";
+        operator = "/";
+        display.textContent = displayValue;
+    });
+
+    bMultiply.addEventListener("click", () => {
+        parseInt(num1 = displayValue.split("Display: ")[1], 10);
+        displayValue = displayValue + "*";
+        operator = "*";
+        display.textContent = displayValue;
     });
 
     bEquals.addEventListener("click", () => {
-        console.log(displayValue);
+        parseInt(num2 = displayValue.split(operator)[1], 10);
+        operate();
+        console.log(num1 + " this is num1");
+        console.log(num2 + " this is num2");
+        console.log(operator + " this is the operator");
+        console.log(answer + " this is answer");
+        displayValue = displayValue + " = " + answer;
+        display.textContent = displayValue;
     });
 
 
-
-
-    let displayValue = nOne.concat(" ", operator, " ", nTwo);
-
-    return displayValue;
-};
-
+}
 
 
 
 function operate() {
-    console.log(display());
+
+
+    if (operator == "+") {
+        add();
+    } else if (operator == "-") {
+        subtract();
+    } else if (operator == "/") {
+        divide();
+    } else if (operator == "*") {
+        multiply();
+    }
+
+
+    function add() {
+        answer = parseInt(num1, 10) + parseInt(num2, 10);
+        return answer;
+    }
+
+    function subtract() {
+        answer = parseInt(num1, 10) - parseInt(num2, 10);
+        return answer;
+    }
+
+    function divide() {
+        answer = parseInt(num1, 10) / parseInt(num2, 10);
+        return answer;
+    }
+
+    function multiply() {
+        answer = parseInt(num1, 10) * parseInt(num2, 10);
+        return answer;
+    }
+
+    return answer;
 }
 
-operate();
+
+
+display();
